@@ -1,0 +1,29 @@
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  color: #4CAF50;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #45a049;
+}
+
+.list-container {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;  /* ลบสัญลักษณ์จุด */
+  padding: 0;
+}
+
+li {
+  font-size: 18px;
+  margin: 10px 0;
+}

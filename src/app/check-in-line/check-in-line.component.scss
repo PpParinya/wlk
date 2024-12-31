@@ -1,0 +1,41 @@
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  color: #4CAF50;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #45a049;
+}
+
+.list-container {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;  /* ลบสัญลักษณ์จุด */
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between; /* ใช้ flexbox เพื่อจัดการตำแหน่ง */
+  align-items: center;
+  margin: 10px 0;  /* เพิ่มช่องว่างระหว่างรายการ */
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-between; /* ให้ข้อความและเช็คบ็อกซ์อยู่ห่างกัน */
+  width: 50%;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px; /* ให้เช็คบ็อกซ์อยู่ทางขวาของข้อความ */
+}

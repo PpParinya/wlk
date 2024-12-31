@@ -1,0 +1,42 @@
+.logout-button {
+  position: absolute; /* ใช้ absolute เพื่อจัดตำแหน่ง */
+  top: 20px; /* กำหนดระยะห่างจากขอบบน */
+  right: 20px; /* กำหนดระยะห่างจากขอบขวา */
+  padding: 10px 20px; /* เพิ่มระยะห่างภายในปุ่ม */
+  background-color: #f44336; /* สีพื้นหลังแดง */
+  color: white; /* สีตัวอักษรขาว */
+  border: none; /* ลบขอบของปุ่ม */
+  border-radius: 5px; /* มุมปุ่มโค้ง */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  cursor: pointer; /* เมื่อวางเมาส์จะเป็นรูปมือ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เงาใต้ปุ่ม */
+  transition: background-color 0.3s ease; /* การเปลี่ยนแปลงสีเมื่อ hover */
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* สีเมื่อ hover */
+}
+
+.bt_layout {
+    display: flex;
+    justify-content: center;  /* จัดกลางแนวนอน */
+    align-items: center;      /* จัดกลางแนวตั้ง */
+    height: 100vh;            /* ให้ div มีความสูงเต็มหน้าจอ */
+    gap: 20px;                /* ระยะห่างระหว่างปุ่ม */
+  }
+  
+  button {
+    padding: 10px 20px;  /* เพิ่มระยะห่างภายในปุ่ม */
+    font-size: 16px;      /* ขนาดตัวอักษร */
+    background-color: #4CAF50;  /* สีพื้นหลังปุ่ม */
+    color: white;         /* สีตัวอักษร */
+    border: none;         /* ลบขอบปุ่ม */
+    border-radius: 5px;   /* มุมปุ่มโค้ง */
+    cursor: pointer;      /* เมื่อวางเมาส์จะแสดงเป็นรูปมือ */
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* สีพื้นหลังเมื่อ hover */
+  }
+  

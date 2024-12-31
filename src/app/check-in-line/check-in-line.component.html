@@ -1,0 +1,13 @@
+<p (click)="goBack()" class="back-button">&lt; ย้อนกลับ</p>
+
+<div class="list-container">
+  <h2>รายชื่อ</h2>
+  <ul>
+    <li *ngFor="let person of people">
+      <label class="checkbox-container">
+        {{ person.name }}
+        <input type="checkbox" [(ngModel)]="person.selected" />
+      </label>
+    </li>
+  </ul>
+</div>

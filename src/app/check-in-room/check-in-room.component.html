@@ -1,0 +1,12 @@
+<!-- ปุ่มย้อนกลับ -->
+<p (click)="goBack()" class="back-button">&lt; ย้อนกลับ</p>
+
+<!-- รายการวิชา -->
+<div class="list-container">
+  <h2>รายวิชาที่สอน</h2>
+  <ul>
+    <li *ngFor="let subject of subjects" (click)="goToSubjectDetail(subject)">
+      {{ subject.name }}
+    </li>
+  </ul>
+</div>

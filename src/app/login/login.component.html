@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="center_screen">
+  <button class="style_button" (click)="showPopup()">Login</button>
+</div>
+
+<div *ngIf="isPopupVisible" class="popup_overlay" (click)="no()">
+  <div class="popup_content" (click)="$event.stopPropagation()">
+    <h2>Login</h2>
+    <form (submit)="onSubmit()">
+      <div class="form_group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          placeholder="Enter your email"
+        />
+      </div>
+      <div class="form_group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+      <div class="form_actions">
+        <button type="button" (click)="no()">Cancel</button>
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
