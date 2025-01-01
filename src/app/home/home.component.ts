@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // รับค่าจาก path parameter
     this.route.params.subscribe((params) => {
-      this.i = +params['i']; // ใช้ + เพื่อแปลงค่าเป็น number
-      console.log(`Received i: ${this.i}`);
+      this.i = +params['i'];
     });
   }
 
@@ -28,8 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   check_room() {
-    let i = 71;
-    this.router.navigate([`CheckInRoom/${i}`]);
+    this.router.navigate([`CheckInRoom`]);
   }
   check_line() {
     this.router.navigate(['CheckInLine']);

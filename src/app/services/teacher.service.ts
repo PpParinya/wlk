@@ -22,10 +22,9 @@ export class TeacherService {
     return this.http.get<any>(url, this.URLServers.requestOptions());
   }
 
-
-
-
-
-  
+  GetLogin(teacherId: any){
+    const url = this.URLServer+'/getLogin?teacherId='+teacherId;
+    return this.http.get<any>(url, this.URLServers.requestOptions());
+  }
 }
 

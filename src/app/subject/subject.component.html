@@ -11,22 +11,81 @@
     </li>
   </ul> -->
 
-  <button>เช็คชื่อเข้าชั้นเรียน</button>
+  <button (click)="showPopup()">เช็คชื่อเข้าชั้นเรียน</button>
 
-<div>
-  <table>
-    <tr>
-      <td>ลำดับ</td>
-      <td>วันที่เช็ค</td>
-      <td>แก้ไข</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>13/07/2539</td>
-      <td><button>แก้ไข</button></td>
-    </tr>
-  </table>
+  <div>
+    <table>
+      <tr>
+        <td>ลำดับ</td>
+        <td>วันที่เช็ค</td>
+        <td>แก้ไข</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>13/07/2539</td>
+        <td><button>แก้ไข</button></td>
+      </tr>
+    </table>
+  </div>
 </div>
 
+<!-- Popup Template -->
+<div *ngIf="isPopupVisible" class="popup_overlay" (click)="no()">
+  <div class="popup_content" (click)="$event.stopPropagation()">
+    <h2>Student Attendance</h2>
+    <form (ngSubmit)="onSubmit()">
+      <ul>
+        <li *ngFor="let student of gradelevel; let i = index" class="attendance-item">
+          <div class="student-info">
+            {{ student.firstname }} {{ student.lastname }}
+          </div>
 
+          <!-- Checkbox for Present -->
+          <div class="attendance-status">
+            <label>
+              <input
+                type="checkbox"
+                [(ngModel)]="attendance[i].present"
+                [name]="'present-' + i"
+              />
+              Present
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                [(ngModel)]="attendance[i].late"
+                [name]="'late-' + i"
+              />
+              Late
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                [(ngModel)]="attendance[i].absent"
+                [name]="'absent-' + i"
+              />
+              Absent
+            </label>
+          </div>
+
+          <!-- Remarks text input -->
+          <div class="remarks-input">
+            <label>
+              Remarks:
+              <input
+                type="text"
+                [(ngModel)]="attendance[i].remarks"
+                [name]="'remarks-' + i"
+              />
+            </label>
+          </div>
+        </li>
+      </ul>
+      <div class="form-actions">
+        <button type="submit">Save Attendance</button>
+        <button type="button" (click)="no()">Close</button>
+      </div>
+    </form>
+  </div>
 </div>
+

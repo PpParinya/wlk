@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
 
 
-  private URLServer = 'http://127.0.0.1:3000';
+  private URLServer = 'http://192.168.1.20:3000';
   private headers: any;
 
 

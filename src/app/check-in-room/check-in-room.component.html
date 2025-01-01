@@ -5,8 +5,11 @@
 <div class="list-container">
   <h2>รายวิชาที่สอน</h2>
   <ul>
-    <li *ngFor="let subject of subjects" (click)="goToSubjectDetail(subject)">
-      {{ subject.name }}
+    <li *ngFor="let subject of data" (click)="goToSubjectDetail(subject)">
+      {{ subject.subjectId}} &nbsp;
+      {{ subject.gradelevel}} &nbsp;
+      {{ subject.starttime}} &nbsp;
+      {{ subject.endtime}} &nbsp;
     </li>
   </ul>
 </div>

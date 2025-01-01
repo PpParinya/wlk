@@ -19,9 +19,9 @@ export const routes: Routes = [
   //     component: MainComponent,
   //   },
   { path: '', component: MainComponent },
-  { path: 'Home/:i', component: HomeComponent },
+  { path: 'Home', component: HomeComponent },
   { path: 'CheckInLine', component: CheckInLineComponent },
-  { path: 'CheckInRoom/:i', component: CheckInRoomComponent },
-  { path: 'subject/:sid/:idx', component: SubjectComponent },
+  { path: 'CheckInRoom', component: CheckInRoomComponent },
+  { path: 'subject', component: SubjectComponent },
 
 ];

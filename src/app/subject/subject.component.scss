@@ -40,3 +40,90 @@
     margin-left: 10px; /* ให้เช็คบ็อกซ์อยู่ทางขวาของข้อความ */
   }
   
+  /* ปรับให้ Layout ใน Popup สวยงาม */
+.popup_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup_content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.attendance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.student-info {
+  flex: 1;
+  font-weight: bold;
+}
+
+.attendance-status {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+}
+
+.attendance-status label {
+  margin-right: 15px;
+}
+
+.remarks-input {
+  flex: 2;
+}
+
+.remarks-input input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="button"] {
+  background-color: #f44336;
+}
+
+button:hover {
+  opacity: 0.8;
+}

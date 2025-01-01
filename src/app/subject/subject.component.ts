@@ -2,43 +2,62 @@ import { CommonModule, Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { GradelevelService } from '../services/gradelevel.service';
 
 @Component({
   selector: 'app-subject',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './subject.component.html',
-  styleUrls: ['./subject.component.scss']
+  styleUrls: ['./subject.component.scss'],
 })
 export class SubjectComponent implements OnInit {
-  subjectId: number | undefined;
-  idx: number | undefined;
+  attendance: any = {};
+  onSubmit() {
+    throw new Error('Method not implemented.');
+  }
 
-  constructor(private route: ActivatedRoute, private location: Location) {}
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private gradelevelService: GradelevelService
+  ) {}
 
-  // ตัวอย่างข้อมูลรายชื่อ
-  people = [
-    { name: 'สมชาย', selected: false },
-    { name: 'สมหญิง', selected: false },
-    { name: 'สมนึก', selected: false },
-    { name: 'สมนารถ', selected: false }
-  ];
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    // ดึง subject.id (sid) จาก URL (paramMap)
-    this.route.paramMap.subscribe(params => {
-      this.subjectId = +params.get('sid')!;  // ใช้ sid จาก URL
-      console.log(`Received subjectId: ${this.subjectId}`);
-    });
+  gradelevel: any;
+  StudentName() {
+    this.gradelevelService.setGradelevel().subscribe(
+      async (data: any) => {
+        console.log(data);
+        this.gradelevel = data; // Store the fetched student data
 
-    // ดึง idx จาก URL (paramMap)
-    this.route.paramMap.subscribe(params => {
-      this.idx = +params.get('idx')!;  // ใช้ idx จาก URL
-      console.log(`Received idx: ${this.idx}`);
-    });
+        // Initialize attendance for each student
+        this.attendance = this.gradelevel.map((student: any) => ({
+          present: false,
+          late: false,
+          absent: false,
+          remarks: '',
+        }));
+
+        this.isPopupVisible = true; // Show the popup
+      },
+      (error: any) => {
+        alert(error.error.message);
+      }
+    );
   }
 
   goBack() {
     this.location.back(); // ย้อนกลับไปหน้าก่อนหน้านี้
+  }
+
+  isPopupVisible = false;
+  showPopup() {
+    this.StudentName();
+    this.isPopupVisible = true;
+  }
+  no() {
+    this.isPopupVisible = false;
   }
 }
